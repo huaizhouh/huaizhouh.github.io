@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0e8">
+  <meta name="description" content="山野来信，收集值得出发的自然目的地。发现山林、海岸与旷野，收藏你的下一次小小逃离。">
+  <title>山野来信 · 把日子还给山海</title>
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="./" aria-label="山野来信首页"><img src="assets/mark.svg" width="37" height="37" alt=""><span>山野来信<small>LETTERS FROM THE WILD</small></span></a>
+    <nav aria-label="主要导航"><a class="nav-active" href="#discover">发现山野</a><a href="#field-notes">出发手记</a><button class="saved-nav" id="saved-nav">我的收藏 <span id="saved-count">0</span></button></nav>
+    <a class="header-cta" href="#discover">去透透气 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="intro-title"><div><p class="eyebrow"><span class="live-dot"></span> 给生活，留一点旷野</p><h1 id="intro-title">把日子，<br>还给<span class="serif">山海。</span><svg class="title-spark" viewBox="0 0 70 70" aria-hidden="true"><path d="M35 4v62M4 35h62M13 13l44 44M13 57l44-44"/></svg></h1><p class="intro-copy">不必走得很远，也能暂时离开日常。<br>在这里，找到下一次让心慢下来的出发。</p><a class="primary-button" href="#discover">发现我的下一站 <span aria-hidden="true">↗</span></a><div class="intro-caption"><span class="tiny-compass">&#x2733;&#xfe0e;</span> 少一点计划，多一点感受。</div></div>
+      <div class="hero-art"><img src="assets/mountains.svg" alt="落日下层叠的青绿色山峦、湖泊与林间小屋" width="1000" height="800"><div class="art-topline"><span>THE ART OF WANDERING</span><span>01 — 03</span></div><div class="art-label"><span class="location-dot">⌖</span><div><small>本期的心动坐标</small><strong>浙江 · 松阳</strong></div><a href="#discover" aria-label="探索松阳">↗</a></div><span class="vertical-type">在山里，时间是另一种形状。</span></div>
+    </section>
+    <section class="discovery" id="discover" aria-labelledby="discovery-title"><div class="section-heading"><div><p class="eyebrow">A LITTLE ESCAPE</p><h2 id="discovery-title">下一站，去自然里。</h2></div><p>总有一处风景，刚好懂你。</p></div><div class="filter-row"><div class="filters" role="group" aria-label="按风景筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部风景 <span>03</span></button><button class="filter" data-filter="mountain" aria-pressed="false">山间有风</button><button class="filter" data-filter="sea" aria-pressed="false">向海而行</button><button class="filter" data-filter="field" aria-pressed="false">旷野漫游</button></div><span class="result-count" id="result-count" aria-live="polite">3 个值得出发的地方</span></div>
+      <div class="cards" id="cards">
+        <article class="destination" data-id="songyang" data-category="mountain"><div class="card-art mountain"><img src="assets/mountains.svg" alt="松阳山林与山间小屋" width="1000" height="800" loading="lazy"><span class="card-tag">山间有风</span><button class="save-button" data-save="songyang" aria-label="收藏松阳" aria-pressed="false">♡</button><span class="image-index">01 / MOUNTAINS</span></div><div class="card-meta"><span>浙江 · 丽水</span><span>适合 2–3 天</span></div><h3>松阳 <span class="card-subtitle">住进山的褶皱里</span></h3><p>古村、茶田和炊烟。把闹钟关掉，等一场山里的日出。</p><button class="text-button" data-detail="songyang">收下这份出发灵感 <span>↗</span></button></article>
+        <article class="destination" data-id="pingtan" data-category="sea"><div class="card-art sea"><img src="assets/coast.svg" alt="平潭海岸边的灯塔、海浪与帆船" width="1000" height="800" loading="lazy"><span class="card-tag">向海而行</span><button class="save-button" data-save="pingtan" aria-label="收藏平潭" aria-pressed="false">♡</button><span class="image-index">02 / COASTLINE</span></div><div class="card-meta"><span>福建 · 福州</span><span>适合 2–3 天</span></div><h3>平潭 <span class="card-subtitle">风是海写来的信</span></h3><p>沿着环岛路慢慢骑，把落日、咸味的风和蓝色装进口袋。</p><button class="text-button" data-detail="pingtan">收下这份出发灵感 <span>↗</span></button></article>
+        <article class="destination" data-id="yili" data-category="field"><div class="card-art field"><img src="assets/grassland.svg" alt="伊犁草原上蜿蜒的小路、毡房和远处的雪山" width="1000" height="800" loading="lazy"><span class="card-tag">旷野漫游</span><button class="save-button" data-save="yili" aria-label="收藏伊犁" aria-pressed="false">♡</button><span class="image-index">03 / WILDERNESS</span></div><div class="card-meta"><span>新疆 · 伊犁</span><span>适合 5–7 天</span></div><h3>伊犁 <span class="card-subtitle">去没有天花板的地方</span></h3><p>走进草原深处，看云的影子，缓缓经过一整片绿色。</p><button class="text-button" data-detail="yili">收下这份出发灵感 <span>↗</span></button></article>
+      </div><div class="empty-state" id="empty-state" hidden><span>♡</span><h3>把喜欢的风景，留给下一次出发。</h3><p>点击目的地上的爱心，就能在这里找到它。</p><button class="text-button" id="show-all">去发现风景 ↗</button></div>
+    </section>
+    <section class="field-notes" id="field-notes" aria-labelledby="notes-title"><div class="note-decoration" aria-hidden="true">&#x2733;&#xfe0e;</div><div><p class="eyebrow">FIELD NOTES · 出发手记</p><h2 id="notes-title">旅行的意义，<br>有时只是好好发一会儿呆。</h2><p>不用把行程填满，不用赶每一个日落。<br>留一段空白，给路上不期而遇的小事。</p></div><div class="packing-note"><span class="note-number">NOTE / 001</span><h3>轻一点，走远一点。</h3><p>出发前的小小清单</p><label><input type="checkbox" data-pack="bottle"> 一只水杯，和一点路上的零食</label><label><input type="checkbox" data-pack="shoes"> 一双舒服的鞋</label><label><input type="checkbox" data-pack="weather"> 看过天气，带好防晒和雨具</label><label><input type="checkbox" data-pack="mood"> 一份不着急的心情</label><span class="handwritten">剩下的，交给沿途的风。↗</span></div></section>
+    <section class="closing"><span>山野不远，来日不长。</span><p>愿你的下一次出发，是因为喜欢。</p><a href="#intro-title" aria-label="回到顶部">↑</a></section>
+  </main>
+  <footer class="footer wrap"><a class="footer-brand" href="./">山野来信 <span>LETTERS FROM THE WILD</span></a><span>用脚步收集世界，用留白安放自己。</span><small>© <span id="year">2026</span> 山野来信</small></footer>
+  <dialog id="destination-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="close-dialog" aria-label="关闭详情">×</button><p class="eyebrow" id="dialog-location"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><h3>给你的一份慢行提案</h3><ol id="dialog-plan"></ol><p class="travel-note">这是一份旅行灵感，实际交通、开放情况与天气请在出发前确认。照顾自然，也照顾好自己。</p><button class="primary-button" id="dialog-save">收藏这次出发 ♡</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
