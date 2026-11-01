@@ -1,37 +1,451 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#edf0e8">
-  <meta name="description" content="山野来信，收集值得出发的自然目的地。发现山林、海岸与旷野，收藏你的下一次小小逃离。">
-  <title>山野来信 · 把日子还给山海</title>
-  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <header class="header wrap">
-    <a class="brand" href="./" aria-label="山野来信首页"><img src="assets/mark.svg" width="37" height="37" alt=""><span>山野来信<small>LETTERS FROM THE WILD</small></span></a>
-    <nav aria-label="主要导航"><a class="nav-active" href="#discover">发现山野</a><a href="#field-notes">出发手记</a><button class="saved-nav" id="saved-nav">我的收藏 <span id="saved-count">0</span></button></nav>
-    <a class="header-cta" href="#discover">去透透气 <span aria-hidden="true">↗</span></a>
-  </header>
-  <main class="wrap">
-    <section class="intro" aria-labelledby="intro-title"><div><p class="eyebrow"><span class="live-dot"></span> 给生活，留一点旷野</p><h1 id="intro-title">把日子，<br>还给<span class="serif">山海。</span><svg class="title-spark" viewBox="0 0 70 70" aria-hidden="true"><path d="M35 4v62M4 35h62M13 13l44 44M13 57l44-44"/></svg></h1><p class="intro-copy">不必走得很远，也能暂时离开日常。<br>在这里，找到下一次让心慢下来的出发。</p><a class="primary-button" href="#discover">发现我的下一站 <span aria-hidden="true">↗</span></a><div class="intro-caption"><span class="tiny-compass">&#x2733;&#xfe0e;</span> 少一点计划，多一点感受。</div></div>
-      <div class="hero-art"><img src="assets/mountains.svg" alt="落日下层叠的青绿色山峦、湖泊与林间小屋" width="1000" height="800"><div class="art-topline"><span>THE ART OF WANDERING</span><span>01 — 03</span></div><div class="art-label"><span class="location-dot">⌖</span><div><small>本期的心动坐标</small><strong>浙江 · 松阳</strong></div><a href="#discover" aria-label="探索松阳">↗</a></div><span class="vertical-type">在山里，时间是另一种形状。</span></div>
-    </section>
-    <section class="discovery" id="discover" aria-labelledby="discovery-title"><div class="section-heading"><div><p class="eyebrow">A LITTLE ESCAPE</p><h2 id="discovery-title">下一站，去自然里。</h2></div><p>总有一处风景，刚好懂你。</p></div><div class="filter-row"><div class="filters" role="group" aria-label="按风景筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部风景 <span>03</span></button><button class="filter" data-filter="mountain" aria-pressed="false">山间有风</button><button class="filter" data-filter="sea" aria-pressed="false">向海而行</button><button class="filter" data-filter="field" aria-pressed="false">旷野漫游</button></div><span class="result-count" id="result-count" aria-live="polite">3 个值得出发的地方</span></div>
-      <div class="cards" id="cards">
-        <article class="destination" data-id="songyang" data-category="mountain"><div class="card-art mountain"><img src="assets/mountains.svg" alt="松阳山林与山间小屋" width="1000" height="800" loading="lazy"><span class="card-tag">山间有风</span><button class="save-button" data-save="songyang" aria-label="收藏松阳" aria-pressed="false">♡</button><span class="image-index">01 / MOUNTAINS</span></div><div class="card-meta"><span>浙江 · 丽水</span><span>适合 2–3 天</span></div><h3>松阳 <span class="card-subtitle">住进山的褶皱里</span></h3><p>古村、茶田和炊烟。把闹钟关掉，等一场山里的日出。</p><button class="text-button" data-detail="songyang">收下这份出发灵感 <span>↗</span></button></article>
-        <article class="destination" data-id="pingtan" data-category="sea"><div class="card-art sea"><img src="assets/coast.svg" alt="平潭海岸边的灯塔、海浪与帆船" width="1000" height="800" loading="lazy"><span class="card-tag">向海而行</span><button class="save-button" data-save="pingtan" aria-label="收藏平潭" aria-pressed="false">♡</button><span class="image-index">02 / COASTLINE</span></div><div class="card-meta"><span>福建 · 福州</span><span>适合 2–3 天</span></div><h3>平潭 <span class="card-subtitle">风是海写来的信</span></h3><p>沿着环岛路慢慢骑，把落日、咸味的风和蓝色装进口袋。</p><button class="text-button" data-detail="pingtan">收下这份出发灵感 <span>↗</span></button></article>
-        <article class="destination" data-id="yili" data-category="field"><div class="card-art field"><img src="assets/grassland.svg" alt="伊犁草原上蜿蜒的小路、毡房和远处的雪山" width="1000" height="800" loading="lazy"><span class="card-tag">旷野漫游</span><button class="save-button" data-save="yili" aria-label="收藏伊犁" aria-pressed="false">♡</button><span class="image-index">03 / WILDERNESS</span></div><div class="card-meta"><span>新疆 · 伊犁</span><span>适合 5–7 天</span></div><h3>伊犁 <span class="card-subtitle">去没有天花板的地方</span></h3><p>走进草原深处，看云的影子，缓缓经过一整片绿色。</p><button class="text-button" data-detail="yili">收下这份出发灵感 <span>↗</span></button></article>
-      </div><div class="empty-state" id="empty-state" hidden><span>♡</span><h3>把喜欢的风景，留给下一次出发。</h3><p>点击目的地上的爱心，就能在这里找到它。</p><button class="text-button" id="show-all">去发现风景 ↗</button></div>
-    </section>
-    <section class="field-notes" id="field-notes" aria-labelledby="notes-title"><div class="note-decoration" aria-hidden="true">&#x2733;&#xfe0e;</div><div><p class="eyebrow">FIELD NOTES · 出发手记</p><h2 id="notes-title">旅行的意义，<br>有时只是好好发一会儿呆。</h2><p>不用把行程填满，不用赶每一个日落。<br>留一段空白，给路上不期而遇的小事。</p></div><div class="packing-note"><span class="note-number">NOTE / 001</span><h3>轻一点，走远一点。</h3><p>出发前的小小清单</p><label><input type="checkbox" data-pack="bottle"> 一只水杯，和一点路上的零食</label><label><input type="checkbox" data-pack="shoes"> 一双舒服的鞋</label><label><input type="checkbox" data-pack="weather"> 看过天气，带好防晒和雨具</label><label><input type="checkbox" data-pack="mood"> 一份不着急的心情</label><span class="handwritten">剩下的，交给沿途的风。↗</span></div></section>
-    <section class="closing"><span>山野不远，来日不长。</span><p>愿你的下一次出发，是因为喜欢。</p><a href="#intro-title" aria-label="回到顶部">↑</a></section>
-  </main>
-  <footer class="footer wrap"><a class="footer-brand" href="./">山野来信 <span>LETTERS FROM THE WILD</span></a><span>用脚步收集世界，用留白安放自己。</span><small>© <span id="year">2026</span> 山野来信</small></footer>
-  <dialog id="destination-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="close-dialog" aria-label="关闭详情">×</button><p class="eyebrow" id="dialog-location"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><h3>给你的一份慢行提案</h3><ol id="dialog-plan"></ol><p class="travel-note">这是一份旅行灵感，实际交通、开放情况与天气请在出发前确认。照顾自然，也照顾好自己。</p><button class="primary-button" id="dialog-save">收藏这次出发 ♡</button></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f6fa" />
+    <meta
+      name="description"
+      content="自由创建你的图片排行榜。拖拽分级、自定义层级与颜色、统一裁剪比例，并一键导出。所有图片均在浏览器本地处理。"
+    />
+    <title>Tier Studio · 你的排名，你来定义</title>
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#board">跳到排序画板</a>
+    <header class="app-header">
+      <a href="./" class="brand"
+        ><img src="assets/mark.svg" width="34" height="34" alt="" /><span
+          >tier<span class="brand-light">studio</span
+          ><span class="brand-dot">.</span></span
+        ></a
+      >
+      <span class="header-divider"></span
+      ><span class="header-caption">让每一份喜欢，有自己的位置。</span>
+      <div class="header-right">
+        <span class="local-badge"><span></span> 图片仅在本地处理</span
+        ><button class="icon-button" id="help-button" aria-label="使用帮助">
+          ?
+        </button>
+      </div>
+    </header>
+    <main class="workspace" inert>
+      <div class="workspace-heading">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL TIER LIST MAKER</p>
+          <h1>你的排名，<span>你来定义。</span></h1>
+          <p class="subtitle">从电影到美食，从热爱到吐槽。拖进来，排个名。</p>
+        </div>
+        <button class="button button-quiet" id="demo-button">
+          <span aria-hidden="true">✧</span> 试试示例
+        </button>
+      </div>
+      <section class="project-bar" aria-label="项目操作">
+        <div class="project-name">
+          <span class="project-icon" aria-hidden="true">▤</span
+          ><label class="sr-only" for="project-title">排行榜标题</label
+          ><input
+            id="project-title"
+            value="我的灵感排行榜"
+            maxlength="100"
+            placeholder="给排行榜起个名字"
+          /><span class="save-status" id="save-status" role="status"
+            >准备就绪</span
+          >
+        </div>
+        <div class="project-actions">
+          <button
+            class="icon-button"
+            id="undo-button"
+            aria-label="撤销"
+            title="撤销 (Ctrl/⌘ Z)"
+            disabled
+          >
+            ↶</button
+          ><button
+            class="icon-button"
+            id="redo-button"
+            aria-label="重做"
+            title="重做 (Ctrl/⌘ Shift Z)"
+            disabled
+          >
+            ↷</button
+          ><span class="action-divider"></span
+          ><button class="button" id="import-project">导入项目</button
+          ><button class="button button-primary" id="export-button">
+            <span aria-hidden="true">↓</span> 导出作品
+          </button>
+        </div>
+      </section>
+      <div class="editor-layout">
+        <div class="editor-column">
+          <section class="board-panel" aria-labelledby="board-heading">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <span class="panel-dot"></span>
+                <h2 id="board-heading">排序画板</h2>
+                <span class="counter" id="tier-count">5 层</span>
+              </div>
+              <span class="small-hint desktop-hint"
+                >拖拽排序 · 点击层级标签编辑</span
+              >
+            </div>
+            <div class="board-viewport">
+              <div id="board" class="board" tabindex="-1"></div>
+            </div>
+            <button id="add-tier" class="add-tier">＋ 添加一个层级</button>
+            <div class="board-footer">
+              <span
+                ><span class="hint-key">↗</span>
+                也可以先点选图片，再点击目标层级</span
+              ><button id="return-all" class="text-button">
+                全部移回待排序
+              </button>
+            </div>
+          </section>
+          <section class="pool-panel" aria-labelledby="pool-heading">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h2 id="pool-heading">待排序图片</h2>
+                <span class="counter" id="pool-count">0 张</span>
+              </div>
+              <div class="pool-actions">
+                <button class="text-button" id="select-all">全选待排序</button
+                ><button class="button button-small" id="upload-button">
+                  ＋ 添加图片
+                </button>
+              </div>
+            </div>
+            <div
+              class="upload-zone"
+              id="upload-zone"
+              role="button"
+              tabindex="0"
+              aria-label="上传图片，支持多选"
+            >
+              <div class="upload-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <rect
+                    x="4"
+                    y="6"
+                    width="24"
+                    height="21"
+                    rx="4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="12"
+                    cy="13"
+                    r="2.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="m5 24 8-7 5 4 5-6 5 7"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+              <strong>把图片拖到这里，灵感即刻就位。</strong>
+              <p>
+                或 <span>点击选择图片</span> · 支持多张
+                JPG、PNG、WebP、GIF、AVIF
+              </p>
+              <small>图片不会上传服务器 · 动图取静态画面</small>
+            </div>
+            <div
+              class="pool-grid drop-target"
+              id="pool-grid"
+              data-target="pool"
+              aria-label="待排序图片区域"
+            ></div>
+            <div class="selection-bar" id="selection-bar" hidden>
+              <span id="selection-count"></span>
+              <div>
+                <button class="text-button" id="crop-image">调整裁剪</button
+                ><button class="text-button" id="deselect">取消选择</button
+                ><button class="text-button danger-text" id="delete-images">
+                  删除
+                </button>
+              </div>
+            </div>
+            <div class="pool-footer">
+              <span id="total-count">共 0 张图片</span
+              ><span>小提示：双击图片可调整裁剪位置</span>
+            </div>
+          </section>
+        </div>
+        <aside class="settings-panel" aria-labelledby="settings-heading">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h2 id="settings-heading">画板设置</h2>
+            </div>
+            <span class="settings-icon" aria-hidden="true">☷</span>
+          </div>
+          <div class="settings-body">
+            <fieldset>
+              <legend>图片比例 <span>ASPECT RATIO</span></legend>
+              <div class="ratio-options" role="group" aria-label="图片比例">
+                <button
+                  class="ratio-option active"
+                  data-ratio="square"
+                  aria-pressed="true"
+                >
+                  <span class="ratio-symbol square"></span
+                  ><strong>正方形</strong><small>1:1</small></button
+                ><button
+                  class="ratio-option"
+                  data-ratio="portrait"
+                  aria-pressed="false"
+                >
+                  <span class="ratio-symbol portrait"></span
+                  ><strong>竖版</strong><small>2:3</small></button
+                ><button
+                  class="ratio-option"
+                  data-ratio="horizontal"
+                  aria-pressed="false"
+                >
+                  <span class="ratio-symbol horizontal"></span
+                  ><strong>横版</strong><small>3:2</small></button
+                ><button
+                  class="ratio-option"
+                  data-ratio="wide"
+                  aria-pressed="false"
+                >
+                  <span class="ratio-symbol wide"></span><strong>宽屏</strong
+                  ><small>16:9</small>
+                </button>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>图片填充</legend>
+              <div class="segmented" role="group" aria-label="图片填充">
+                <button data-fit="cover" class="active" aria-pressed="true">
+                  裁剪填充</button
+                ><button data-fit="contain" aria-pressed="false">
+                  完整显示
+                </button>
+              </div>
+              <p class="setting-hint">保留原图，切换比例不会损失图片内容。</p>
+            </fieldset>
+            <fieldset>
+              <legend>
+                <label for="global-columns">每层默认列数</label
+                ><output id="columns-value" for="global-columns">8</output>
+              </legend>
+              <input
+                type="range"
+                id="global-columns"
+                min="1"
+                max="20"
+                value="8"
+              />
+              <div class="range-labels">
+                <span>1 张 / 行</span><span>20 张 / 行</span>
+              </div>
+              <p class="setting-hint">点击层级标签，可单独设置该层列数。</p>
+            </fieldset>
+            <fieldset class="toggle-field">
+              <label for="show-names"
+                >显示图片名称<small>同时应用于 PNG 导出</small></label
+              ><input class="switch" type="checkbox" id="show-names" />
+            </fieldset>
+            <div class="settings-note">
+              <span aria-hidden="true">✦</span>
+              <div>
+                <strong>你的创作，自动留存。</strong>
+                <p>
+                  项目自动保存在当前浏览器。导出项目文件，可备份或换设备继续编辑。
+                </p>
+              </div>
+            </div>
+            <button class="button save-project-button" id="save-project">
+              ↓ 保存可编辑项目</button
+            ><button class="text-button reset-button" id="new-project">
+              新建空白画板
+            </button>
+          </div>
+        </aside>
+      </div>
+      <footer class="app-footer">
+        <span>MADE FOR YOUR VERY SPECIFIC OPINIONS.</span
+        ><span>不必客观，喜欢就好。<span class="footer-star">✧</span></span>
+      </footer>
+    </main>
+    <input
+      type="file"
+      id="image-input"
+      accept="image/jpeg,image/png,image/webp,image/gif,image/avif,image/bmp"
+      multiple
+      hidden
+    />
+    <input
+      type="file"
+      id="project-input"
+      accept=".json,application/json"
+      hidden
+    />
+    <dialog id="tier-dialog" aria-labelledby="tier-dialog-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">MAKE IT YOURS</p>
+          <h2 id="tier-dialog-title">编辑层级</h2>
+        </div>
+        <button class="icon-button" data-close aria-label="关闭">×</button>
+      </div>
+      <form id="tier-form">
+        <label class="field-label" for="tier-name">层级名称</label
+        ><input
+          class="text-input"
+          id="tier-name"
+          maxlength="40"
+          required
+        /><label class="field-label" for="tier-color">标签颜色</label>
+        <div class="color-picker">
+          <input type="color" id="tier-color" />
+          <div class="color-swatches" id="color-swatches"></div>
+          <span id="color-value"></span>
+        </div>
+        <label class="field-label" for="tier-columns">每行图片数量</label>
+        <div class="number-field">
+          <input
+            class="text-input"
+            id="tier-columns"
+            type="number"
+            min="1"
+            max="20"
+            value="8"
+          /><label
+            ><input type="checkbox" id="use-global-columns" checked />
+            跟随默认列数</label
+          >
+        </div>
+        <p class="setting-hint">超出的图片会自动换到下一行。</p>
+        <div class="dialog-footer">
+          <button
+            type="button"
+            class="text-button danger-text"
+            id="delete-tier"
+          >
+            删除此层</button
+          ><button class="button button-primary" type="submit">保存设置</button>
+        </div>
+        <p class="setting-hint">删除层级后，其中的图片会移回待排序区。</p>
+      </form>
+    </dialog>
+    <dialog id="crop-dialog" aria-labelledby="crop-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FIND THE PERFECT FRAME</p>
+          <h2 id="crop-title">调整图片裁剪</h2>
+        </div>
+        <button class="icon-button" data-close aria-label="关闭">×</button>
+      </div>
+      <div class="crop-preview-wrap">
+        <canvas id="crop-preview" width="420" height="420"></canvas>
+      </div>
+      <p class="setting-hint" id="crop-name"></p>
+      <label class="slider-label" for="crop-x"
+        >水平位置 <output id="crop-x-value">50%</output></label
+      ><input id="crop-x" type="range" min="0" max="100" value="50" /><label
+        class="slider-label"
+        for="crop-y"
+        >垂直位置 <output id="crop-y-value">50%</output></label
+      ><input id="crop-y" type="range" min="0" max="100" value="50" />
+      <p class="setting-hint">按当前图片比例预览；完整显示模式不会裁剪。</p>
+      <div class="dialog-footer">
+        <button class="button" id="reset-crop">居中</button
+        ><button class="button button-primary" id="apply-crop">应用裁剪</button>
+      </div>
+    </dialog>
+    <dialog id="export-dialog" aria-labelledby="export-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">READY TO SHARE</p>
+          <h2 id="export-title">把你的排名，分享出去。</h2>
+        </div>
+        <button class="icon-button" data-close aria-label="关闭">×</button>
+      </div>
+      <div class="export-format">
+        <span class="file-icon">PNG</span>
+        <div>
+          <strong>高清图片</strong>
+          <p>保留层级颜色、裁剪比例和每层列数</p>
+        </div>
+      </div>
+      <label class="field-label" for="export-scale">导出清晰度</label
+      ><select id="export-scale" class="text-input">
+        <option value="2">高清 · 2 倍尺寸</option>
+        <option value="1">标准 · 1 倍尺寸</option></select
+      ><label class="check-label"
+        ><input type="checkbox" id="export-title-check" checked />
+        包含排行榜标题</label
+      ><label class="check-label"
+        ><input type="checkbox" id="export-pool" />包含待排序图片</label
+      >
+      <p class="setting-hint">
+        导出前请先将图片放入层级，或选择包含待排序图片。
+      </p>
+      <button class="button button-primary full-width" id="download-png">
+        ↓ 下载 PNG 图片</button
+      ><button class="text-button export-backup" id="export-backup">
+        想以后接着改？保存可编辑项目 (.json) ↗
+      </button>
+      <p class="export-status" id="export-status" role="status"></p>
+    </dialog>
+    <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+      <div class="dialog-heading">
+        <h2 id="confirm-title">确认操作</h2>
+        <button class="icon-button" data-close aria-label="关闭">×</button>
+      </div>
+      <p id="confirm-message"></p>
+      <div class="dialog-footer">
+        <button class="button" data-close>取消</button
+        ><button class="button button-primary" id="confirm-action">确认</button>
+      </div>
+    </dialog>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">A QUICK TOUR</p>
+          <h2 id="help-title">三步，排出你的态度。</h2>
+        </div>
+        <button class="icon-button" data-close aria-label="关闭">×</button>
+      </div>
+      <ol class="help-steps">
+        <li>
+          <strong>添加你的图片</strong>
+          <p>
+            多选上传，或把图片文件拖进待排序区。单张最大 25 MB，会生成最长边
+            1600 像素的本地工作副本。
+          </p>
+        </li>
+        <li>
+          <strong>随心排，自由改</strong>
+          <p>
+            拖拽到任意层级，或点选图片后点击目标层空白区域。多选图片可一起移动；点击已选择的图片可取消。手机上也可点选再放置。
+          </p>
+          <p>
+            点击层级名称编辑颜色、名称和列数；右侧箭头调整层级顺序。双击图片调整裁剪，或选择单张图片后点击“调整裁剪”。
+          </p>
+        </li>
+        <li>
+          <strong>保存你的独家排名</strong>
+          <p>
+            导出 PNG 分享，或下载 JSON
+            项目文件备份。自动保存在此浏览器，清除站点数据会删除本地存档。
+          </p>
+        </li>
+      </ol>
+      <p class="setting-hint">
+        快捷键：Ctrl / ⌘ + Z 撤销，Ctrl / ⌘ + Shift + Z 重做，Esc 取消选择。
+      </p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="drag-ghost" id="drag-ghost" hidden></div>
+  </body>
 </html>
