@@ -15,6 +15,7 @@ const path = require("node:path");
   });
   try {
     const context = await browser.newContext({
+      colorScheme: process.env.TEST_COLOR_SCHEME || "light",
       viewport: { width: 1440, height: 1100 },
     });
     const page = await context.newPage();

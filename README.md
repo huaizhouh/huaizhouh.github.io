@@ -14,6 +14,7 @@
 - JSON 项目导出 / 导入，包含全部工作图片和设置，可跨设备继续编辑。
 - IndexedDB 自动保存，刷新恢复；30 步撤销 / 重做。快捷键 Ctrl / ⌘ + Z，Ctrl / ⌘ + Shift + Z。
 - 内置可编辑示例、响应式布局；窄屏画板可横向滚动。
+- 页面自动跟随系统浅色 / 深色模式，系统外观切换后即时更新；表单与弹窗同步适配。PNG 导出保持固定配色，层级标签与图片保留用户设置。
 
 ## 运行
 
@@ -53,6 +54,10 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 ```sh
 CHROMIUM_PATH=/usr/bin/chromium node tests/editor.cjs
+TEST_COLOR_SCHEME=dark CHROMIUM_PATH=/usr/bin/chromium node tests/editor.cjs
+CHROMIUM_PATH=/usr/bin/chromium node tests/theme.cjs
 ```
+
+`tests/theme.cjs` 验证系统主题实时切换、深色模式文字对比度、弹窗与表单、手机布局，以及导出 PNG 不受外观影响。
 
 如果使用 Playwright 自带的 Chromium，省略 `CHROMIUM_PATH`。`TEST_URL` 可以指定其他测试服务地址。验证使用独立浏览器上下文，不修改真实用户存档；下载文件和截图保存在系统临时目录。测试依赖只用于开发，不影响静态部署。
